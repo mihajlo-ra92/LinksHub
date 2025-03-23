@@ -31,7 +31,9 @@ export const PopupInfo: React.FC<{
           onClick={(e) => e.stopPropagation()}
           ref={popupRef}
           className={`fixed left-1/2 top-1/2 z-[150] max-w-[500px] -translate-x-1/2 -translate-y-1/2 transition-all ${
-            currentCard ? 'animate-scale-appearance' : 'animate-scale-hide'
+            currentCard
+              ? 'animate-scale-appearance opacity-100'
+              : 'animate-scale-hide opacity-0'
           } flex h-fit w-[90%] flex-col justify-between gap-5 overflow-hidden rounded-2xl bg-light-primary border-2 border-theme-secondary/50 px-5 py-10 dark:bg-slate-800 dark:border dark:border-theme-primary/8`}
           role="dialog"
           title={`${currentCard?.name ?? 'Card'} Popup`}
